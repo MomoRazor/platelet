@@ -1,5 +1,7 @@
 The following are instructions to start understanding and contributing to this project.
 
+NOTE: All new development should be done using Typescript were possible.
+
 Firstly, simply run `npm i` to install the project's packages. After this finishes successfully, choose the most appropriate from the options below:
 
 # Option 1 - Starting Demo Mode (FE Only)
@@ -21,6 +23,14 @@ With this in place, simple run `npm run start`. This should start the project in
 
 # Option 2 - Provisioning a backend on AWS Amplify
 
+This approach allows contributions to the backend system as well, while still being relatively straight forward to set up.
+
+1. Set up or login to your [AWS account](https://aws.amazon.com/profile)
+2. Go to AWS Amplify, and deploy a new application. This application should link to your forked repository of Platelet
+# TODO carry this on
 
 
 # Option 3 - Using a Tenant API
+
+This requires a lot more set up, but it provides an environment closest to production. Suggested for contributers looking to work in the backend on more holistic changes, this would require help from current contributers to set up. Let us know if you would like to pursue this approach.
+

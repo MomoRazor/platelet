@@ -10,12 +10,13 @@ This is the easiest and quickest way to get working on the project. This is sugg
 
 Create a `.env` file in the root of the cloned project and add the following text within it:
 
-`REACT_APP_OFFLINE_ONLY=true
-REACT_APP_POPULATE_FAKE_DATA=true
-REACT_APP_DEMO_MODE=true
-REACT_APP_DEMO_PROFILE_PICTURES_BUCKET_NAME=platelet-demo-profilepics
-REACT_APP_DEMO_PROFILE_PICTURES_BUCKET_REGION=eu-west-1
-REACT_APP_GOOGLE_MAPS_API_KEY=<optional>`
+- REACT_APP_OFFLINE_ONLY=true
+- REACT_APP_POPULATE_FAKE_DATA=true
+- REACT_APP_DEMO_MODE=true
+- REACT_APP_DEMO_PROFILE_PICTURES_BUCKET_NAME=platelet-demo-profilepics
+- REACT_APP_DEMO_PROFILE_PICTURES_BUCKET_REGION=eu-west-1
+- REACT_APP_GOOGLE_MAPS_API_KEY=<optional>
+
 
 The maps API key here can be provisioned on Google Cloud, but it isn't essential to functionality. Unless you are tackling tasks directly connected with the maps representation within the system, this can be safely ignored.
 
@@ -27,7 +28,7 @@ This approach allows contributions to the backend system as well, while still be
 
 1. Set up or login to your [AWS account](https://aws.amazon.com/profile)
 2. Go to AWS Amplify, and deploy a new application. This application should link to your forked repository of Platelet
-# TODO carry this on
+TODO continue this section
 
 
 # Option 3 - Using a Tenant API

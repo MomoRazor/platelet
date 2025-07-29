@@ -485,6 +485,312 @@
       "type": "manual"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_PlateletTaskResolvers_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "PlateletTaskResolvers"
+        }
+      ]
+    },
+    "AMPLIFY_function_PlateletTaskResolvers_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "PlateletTaskResolvers"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAddNewTenant_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAddNewTenant"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAddNewTenant_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAddNewTenant"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminAddNewUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminAddNewUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminAddNewUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminAddNewUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminChangeUserEmail_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminChangeUserEmail"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminChangeUserEmail_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminChangeUserEmail"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminChangeUserRoles_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminChangeUserRoles"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminChangeUserRoles_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminChangeUserRoles"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminDisableUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminDisableUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminDisableUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminDisableUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminEnableUser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminEnableUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminEnableUser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminEnableUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminResetUserPassword_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminResetUserPassword"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletAdminResetUserPassword_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletAdminResetUserPassword"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletArchiveNullTasks_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletArchiveNullTasks"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletArchiveNullTasks_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletArchiveNullTasks"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletArchiver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletArchiver"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletArchiver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletArchiver"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletCreateScheduledTasks_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletCreateScheduledTasks"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletCreateScheduledTasks_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletCreateScheduledTasks"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletGetStatistics_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletGetStatistics"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletGetStatistics_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletGetStatistics"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletMoveFutureTasksToPending_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletMoveFutureTasksToPending"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletMoveFutureTasksToPending_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletMoveFutureTasksToPending"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletProfilePictureResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletProfilePictureResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletProfilePictureResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletProfilePictureResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletProfilePictureUploadURLResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletProfilePictureUploadURLResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletProfilePictureUploadURLResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletProfilePictureUploadURLResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletSendEmail_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletSendEmail"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletSendEmail_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletSendEmail"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletSendUserFeedback_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletSendUserFeedback"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletSendUserFeedback_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletSendUserFeedback"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletappSyncOperations_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletappSyncOperations"
+        }
+      ]
+    },
+    "AMPLIFY_function_plateletappSyncOperations_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "plateletappSyncOperations"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_appId": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_type": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    }
+  },
   "storage": {
     "plateletStorage": {
       "dependsOn": [

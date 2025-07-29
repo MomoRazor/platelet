@@ -18,10 +18,9 @@
         "aws-sdk": "^2.1157.0",
         "graphql-tag": "^2.12.6",
         "node-fetch": "^2.6.9",
-        "sharp": "^0.30.7"
+        "sharp": "^0.34.3"
     },
     "scripts": {
-        "preinstall": "SHARP_IGNORE_GLOBAL_LIBVIPS=1 npm install --arch=x64 --platform=linux --libc=glibc sharp",
         "test": "jest test --watchAll --testTimeout=10000",
         "test:debug": "jest --watchAll --inspect test --runInBand --no-cache --testTimeout=100000000"
     }

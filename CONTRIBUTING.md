@@ -31,10 +31,19 @@ This approach allows contributions to the backend system as well, while still be
     - Select the region closest to you and `json` as the default output format.
 4. Confirm that AWS Amplify cli is installed. It is added as a devdependency, but to use this, you must add `npx` before every amplify command. To avoid this, simply install amplify globally `npm install -g @aws-amplify/cli`.
 5. Run `amplify init` and enter the same information entered in your `aws configure` step.
-6. Run `amplify push`
-
-<!-- 5. Go to AWS Amplify, and deploy a new application. This application should link to your forked repository of Platelet
-   TODO continue this section -->
+6. Run `amplify push`. This will take some time and do a number of changes to you codebase. Answer any prompts with a 'y' or a 'yes'.
+7. Next you need to add a user to the pool and add it to the "SUPER" group. To do this, use the `amplify console` command in your terminal, which will open the console page for your new Amplify App. Enter the Authentication Tab, and in the Users section, take a note of the name of the pool and click View in Cognito. Then select it from the list. In here, create a new User and then add it to the 'Super' group by going into the specific user and group in there.
+8. Back in the terminal run `amplify api console` and select `GraphQL`.
+9. In this api console, submit the following mutation:
+   `mutation registerTentant {
+registerTenant(
+        name: "name-of-user",
+        emailAddress: "email-of-user",
+        tenantName: "any-name"
+    ){
+        id
+    }
+}`
 
 # Option 3 - Using a Tenant API
 

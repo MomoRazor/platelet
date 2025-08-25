@@ -6,7 +6,6 @@ import {
     Paper,
     Select,
     Stack,
-    TextField,
     Tooltip,
     useMediaQuery,
 } from "@mui/material";
@@ -14,7 +13,7 @@ import { ModelSortDirection } from "../../../API";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import DaysSelection, { Days } from "../../../components/DaysSelection";
 import LoadingSpinner from "../../../components/LoadingSpinner";
-import { DateRangePicker, DateRange } from "@mui/lab";
+import { DateRangePicker, DateRange } from "@mui/x-date-pickers-pro";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 type TaskHistoryControlsProps = {
@@ -165,31 +164,39 @@ const TaskHistoryControls: React.FC<TaskHistoryControlsProps> = ({
                 {customRange && (
                     <Stack direction="row">
                         <DateRangePicker
-                            startText="From"
-                            inputFormat="dd/MM/yyyy"
-                            endText="To"
+                            format="dd/MM/yyyy"
+                            // startText="From"
+                            // inputFormat="dd/MM/yyyy"
+                            // endText="To"
                             value={customDaysRange}
                             onChange={handleDateChange}
-                            renderInput={(startProps, endProps) => (
-                                <Stack spacing={1} direction="row">
-                                    <TextField
-                                        {...startProps}
-                                        size="small"
-                                        inputProps={{
-                                            ...startProps.inputProps,
-                                            "aria-label": "Start date",
-                                        }}
-                                    />
-                                    <TextField
-                                        {...endProps}
-                                        size="small"
-                                        inputProps={{
-                                            ...endProps.inputProps,
-                                            "aria-label": "End date",
-                                        }}
-                                    />
-                                </Stack>
-                            )}
+                            slotProps={{
+                                textField: {
+                                    inputProps: {
+                                        "aria-label": "Date range",
+                                    },
+                                },
+                            }}
+                            // renderInput={(startProps, endProps) => (
+                            //     <Stack spacing={1} direction="row">
+                            //         <TextField
+                            //             {...startProps}
+                            //             size="small"
+                            //             inputProps={{
+                            //                 ...startProps.inputProps,
+                            //                 "aria-label": "Start date",
+                            //             }}
+                            //         />
+                            //         <TextField
+                            //             {...endProps}
+                            //             size="small"
+                            //             inputProps={{
+                            //                 ...endProps.inputProps,
+                            //                 "aria-label": "End date",
+                            //             }}
+                            //         />
+                            //     </Stack>
+                            // )}
                         />
                         <IconButton
                             aria-label="back to days selection"

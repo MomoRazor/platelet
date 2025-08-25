@@ -5,7 +5,6 @@ import {
     Button,
     IconButton,
     Stack,
-    TextField,
     Tooltip,
     Typography,
     useMediaQuery,
@@ -15,7 +14,7 @@ import { useTheme } from "@mui/material/styles";
 import * as models from "../../models";
 import ConfirmationDialog from "../../components/ConfirmationDialog";
 import { calculateBetweenIsOneDay } from "../../utilities/calculateBetweenIsOneDay";
-import { DatePicker } from "@mui/lab";
+import { DatePicker } from "@mui/x-date-pickers";
 import moment from "moment";
 
 export enum ScheduledDatePickerOption {
@@ -265,13 +264,14 @@ const PickUpAndDeliverSchedule: React.FC<PickUpAndDeliverScheduleProps> = ({
                 <Stack sx={{ minWidth: 500 }} spacing={2}>
                     {!hideDate && (
                         <DatePicker
-                            inputFormat={"dd/MM/yyyy"}
+                            // inputFormat={"dd/MM/yyyy"}
+                            format="dd/MM/yyyy"
                             disablePast
                             value={state?.date}
                             onChange={(date) =>
                                 handleSetCustomDate(date ?? null)
                             }
-                            renderInput={(params) => <TextField {...params} />}
+                            // renderInput={(params) => <TextField {...params} />}
                         />
                     )}
                     <TimeRelationPicker

@@ -1,6 +1,6 @@
-import { DateTimePicker } from "@mui/lab";
+import { DateTimePicker } from "@mui/x-date-pickers";
 import * as models from "../../../models";
-import { Stack, TextField, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import React from "react";
 import { ContactForm } from "../../../components/ContactForm";
 import EstablishmentDetails from "../../sharedTaskComponents/EstablishmentDetails";
@@ -90,20 +90,28 @@ export const CallerDetails: React.FC<CallerDetailType> = ({
             </Typography>
             <DateTimePicker
                 label="Time of call"
-                inputFormat={"dd/MM/yyyy HH:mm"}
+                format="dd/MM/yyyy HH:mm"
+                // inputFormat={"dd/MM/yyyy HH:mm"}
                 ampm={false}
-                renderInput={(params) => {
-                    const { inputProps } = params;
-                    return (
-                        <TextField
-                            {...params}
-                            inputProps={{
-                                ...inputProps,
-                                "aria-label": "Time of call",
-                            }}
-                        />
-                    );
+                slotProps={{
+                    textField: {
+                        inputProps: {
+                            "aria-label": "Time of call",
+                        },
+                    },
                 }}
+                // renderInput={(params) => {
+                //     const { inputProps } = params;
+                //     return (
+                //         <TextField
+                //             {...params}
+                //             inputProps={{
+                //                 ...inputProps,
+                //                 "aria-label": "Time of call",
+                //             }}
+                //         />
+                //     );
+                // }}
                 value={timeOfCall}
                 onChange={(v) => {
                     if (v) onChangeTimeOfCall(v);

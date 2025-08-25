@@ -1,18 +1,11 @@
 import * as React from "react";
 import * as models from "../../../models";
-import {
-    Box,
-    Button,
-    IconButton,
-    Stack,
-    TextField,
-    Typography,
-} from "@mui/material";
+import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 import ClearIcon from "@mui/icons-material/Clear";
 import TimeRelationPicker from "../TimeRelationPicker";
-import { DatePicker } from "@mui/lab";
+import { DatePicker } from "@mui/x-date-pickers";
 import TaskScheduleIconText from "../TaskScheduleIconText";
 import { Schedule } from "../PickUpAndDeliverSchedule";
 import { convertScheduleToTaskData } from "../../../utilities/convertScheduleToTaskData";
@@ -136,11 +129,12 @@ export const TaskScheduleDetails: React.FC<TaskScheduleDetailsProps> = ({
                 <Stack sx={{ minWidth: 500 }} spacing={2}>
                     {!hideDate && (
                         <DatePicker
-                            inputFormat={"dd/MM/yyyy"}
+                            // inputFormat={"dd/MM/yyyy"}
+                            format="dd/MM/yyyy"
                             disablePast
                             value={new Date(scheduleState?.date ?? "")}
                             onChange={handleChangeDate}
-                            renderInput={(params) => <TextField {...params} />}
+                            // renderInput={(params) => <TextField {...params} />}
                         />
                     )}
                     {scheduleState?.date && (

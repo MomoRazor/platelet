@@ -1,7 +1,11 @@
 import React from "react";
 import { Box, Grid, IconButton, Stack, TextField } from "@mui/material";
 import DaysSelection, { Days } from "../../../components/DaysSelection";
-import { DateRangePicker, DateRange } from "@mui/lab";
+import {
+    DateRangePicker,
+    DateRange,
+    DateRangeValidationError,
+} from "@mui/x-date-pickers-pro";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import UserRoleSelect from "../../../components/UserRoleSelect";
 import CoordinatorPicker from "../../../components/CoordinatorPicker";
@@ -10,7 +14,6 @@ import RiderPicker from "../../../components/RiderPicker";
 import * as models from "../../../models";
 import { useSelector } from "react-redux";
 import { getWhoami } from "../../../redux/Selectors";
-import { DateRangeValidationError } from "@mui/lab/internal/pickers/date-utils";
 
 type ReportsControlsProps = {
     adminSelectedUser: models.User | null;
@@ -132,35 +135,43 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
                 <Stack direction="row">
                     <DateRangePicker
                         disableFuture
-                        startText="From"
+                        // startText="From"
                         maxDate={getMaxDate()}
                         onError={handleCustomRangeError}
-                        inputFormat="dd/MM/yyyy"
-                        endText="To"
+                        // inputFormat="dd/MM/yyyy"
+                        format="dd/MM/yyyy"
+                        // endText="To"
                         value={customDaysRange}
                         onChange={handleDateChange}
-                        renderInput={(startProps, endProps) => (
-                            <Stack spacing={1} direction="row">
-                                <TextField
-                                    {...startProps}
-                                    size="small"
-                                    helperText={errorMessage(dateError?.[0])}
-                                    inputProps={{
-                                        ...startProps.inputProps,
-                                        "aria-label": "Start date",
-                                    }}
-                                />
-                                <TextField
-                                    {...endProps}
-                                    size="small"
-                                    helperText={errorMessage(dateError?.[1])}
-                                    inputProps={{
-                                        ...endProps.inputProps,
-                                        "aria-label": "End date",
-                                    }}
-                                />
-                            </Stack>
-                        )}
+                        slotProps={{
+                            textField: {
+                                helperText: errorMessage(dateError?.[0]),
+                                size: "small",
+                                inputProps: { "aria-label": "date range" },
+                            },
+                        }}
+                        // renderInput={(startProps, endProps) => (
+                        //     <Stack spacing={1} direction="row">
+                        //         <TextField
+                        //             {...startProps}
+                        //             size="small"
+                        //             helperText={errorMessage(dateError?.[0])}
+                        //             inputProps={{
+                        //                 ...startProps.inputProps,
+                        //                 "aria-label": "Start date",
+                        //             }}
+                        //         />
+                        //         <TextField
+                        //             {...endProps}
+                        //             size="small"
+                        //             helperText={errorMessage(dateError?.[1])}
+                        //             inputProps={{
+                        //                 ...endProps.inputProps,
+                        //                 "aria-label": "End date",
+                        //             }}
+                        //         />
+                        //     </Stack>
+                        // )}
                     />
                     <IconButton
                         aria-label="back to days selection"

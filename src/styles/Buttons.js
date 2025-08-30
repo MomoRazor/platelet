@@ -1,5 +1,5 @@
-import {styled} from "@mui/styles";
-import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
+import { styled } from "@mui/material";
+import { AddCircleOutline } from "@mui/icons-material";
 
 export const StyledAddCircleOutline = styled(AddCircleOutline)({
     cursor: "pointer",
@@ -8,9 +8,8 @@ export const StyledAddCircleOutline = styled(AddCircleOutline)({
     height: "80px",
     margin: "15px",
     borderRadius: "50%",
-    background: "white"
+    background: "white",
 });
-
 
 export const StyledAddCircleOutlineSmall = styled(AddCircleOutline)({
     cursor: "pointer",
@@ -18,15 +17,15 @@ export const StyledAddCircleOutlineSmall = styled(AddCircleOutline)({
     width: "50px",
     height: "50px",
     borderRadius: "50%",
-    background: "white"
+    background: "white",
 });
 
 export const StyledAddCircleOutlineDisabled = styled(StyledAddCircleOutline)({
     color: "grey",
 });
 
-
-export const StyledAddCircleOutlineSmallDisabled = styled(StyledAddCircleOutlineSmall)({
+export const StyledAddCircleOutlineSmallDisabled = styled(
+    StyledAddCircleOutlineSmall
+)({
     color: "grey",
 });
-

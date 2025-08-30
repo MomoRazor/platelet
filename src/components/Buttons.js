@@ -1,19 +1,17 @@
-import IconButton from "@mui/material/IconButton";
-import React from "react";
 import {
     StyledAddCircleOutlineDisabled,
     StyledAddCircleOutline,
-} from "../styles/Buttons";
-import {
     StyledAddCircleOutlineSmallDisabled,
     StyledAddCircleOutlineSmall,
 } from "../styles/Buttons";
-import Tooltip from "@mui/material/Tooltip";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
+import { Tooltip, IconButton } from "@mui/material";
+import {
+    ArrowBack,
+    ArrowDownward,
+    ArrowForward,
+    ArrowUpward,
+    AddCircleOutline,
+} from "@mui/icons-material";
 import { makeStyles } from "tss-react/mui";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -120,13 +118,13 @@ function ArrowButton(props) {
 
     let arrowIcon = <></>;
     if (props.direction === "up")
-        arrowIcon = <ArrowUpwardIcon className={classes.button} />;
+        arrowIcon = <ArrowUpward className={classes.button} />;
     else if (props.direction === "down")
-        arrowIcon = <ArrowDownwardIcon className={classes.button} />;
+        arrowIcon = <ArrowDownward className={classes.button} />;
     else if (props.direction === "back")
-        arrowIcon = <ArrowBackIcon className={classes.button} />;
+        arrowIcon = <ArrowBack className={classes.button} />;
     else if (props.direction === "forward")
-        arrowIcon = <ArrowForwardIcon className={classes.button} />;
+        arrowIcon = <ArrowForward className={classes.button} />;
 
     const linkProps = props.linkTo ? { component: Link, to: props.linkTo } : {};
 

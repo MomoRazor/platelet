@@ -11,8 +11,7 @@ import {
 import { DataStore } from "aws-amplify";
 import * as models from "../../../models";
 import { displayErrorNotification } from "../../../redux/notifications/NotificationsActions";
-import { Stack, useMediaQuery, Divider } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { Stack, useMediaQuery, Divider, useTheme } from "@mui/material";
 import CurrentRiderResponsibilitySelector from "./CurrentRiderResponsibilitySelector";
 import Skeleton from "@mui/material/Skeleton";
 import usePossibleRiderResponsibilities from "../../../hooks/usePossibleRiderResponsibilities";

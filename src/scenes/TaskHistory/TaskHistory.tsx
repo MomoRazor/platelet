@@ -7,7 +7,7 @@ import TaskHistoryCard from "./components/TaskHistoryCard";
 import TaskHistoryControls from "./components/TaskHistoryControls";
 import { ModelSortDirection } from "../../API";
 import DateStampDivider from "../../components/DateStampDivider";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router";
 import { encodeUUID } from "../../utilities";
 import { useSelector } from "react-redux";
 import { getWhoami } from "../../redux/Selectors";

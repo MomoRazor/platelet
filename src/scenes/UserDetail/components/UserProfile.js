@@ -1,15 +1,20 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Divider from "@mui/material/Divider";
 import EditModeToggleButton from "../../../components/EditModeToggleButton";
 import { getWhoami } from "../../../redux/Selectors";
 import { displayErrorNotification } from "../../../redux/notifications/NotificationsActions";
 import { userRoles } from "../../../apiConsts";
-import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
+import {
+    Box,
+    Stack,
+    Typography,
+    useMediaQuery,
+    Divider,
+    useTheme,
+} from "@mui/material";
 import { DataStore } from "aws-amplify";
 import * as models from "../../../models/index";
 import UserRolesAndSelector from "./UserRolesAndSelector";
-import { useTheme } from "@mui/styles";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 import { API, graphqlOperation } from "aws-amplify";
 import { tenantIdSelector } from "../../../redux/Selectors";

@@ -1,20 +1,24 @@
 import React from "react";
-import RateReviewIcon from "@mui/icons-material/RateReview";
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import { Link } from "react-router-dom";
+import { RateReviewIcon, SignalWifiOff } from "@mui/icons-material";
+import {
+    IconButton,
+    Menu,
+    MenuItem,
+    Box,
+    Stack,
+    Tooltip,
+    useTheme,
+    useMediaQuery,
+} from "@mui/material";
+import { Link } from "react-router";
 import { encodeUUID } from "../../utilities";
-import { Box, Stack, Tooltip } from "@mui/material";
 import UserAvatar from "../../components/UserAvatar";
 import { useDispatch, useSelector } from "react-redux";
 import { getWhoami } from "../../redux/Selectors";
-import SignalWifiOff from "@mui/icons-material/SignalWifiOff";
 import { networkStatusSelector } from "../../redux/Selectors";
 import { logoutUser } from "../../redux/login/LoginActions";
 import SyncStatusCircleLoader from "./SyncStatusCircleLoader";
 import UserFeedbackDialog from "./UserFeedbackDialog";
-import { useTheme, useMediaQuery } from "@mui/material";
 import { DataStore } from "aws-amplify";
 
 function LightToggleProfileMenu() {

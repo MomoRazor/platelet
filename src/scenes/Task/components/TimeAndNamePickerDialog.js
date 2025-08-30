@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 import { DateTimePicker } from "@mui/lab";
 import { Stack, TextField, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
 function TimeAndNamePickerDialog({
     open,

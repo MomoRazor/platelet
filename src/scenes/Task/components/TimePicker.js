@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import Typography from "@mui/material/Typography";
@@ -11,7 +10,7 @@ import { makeStyles } from "tss-react/mui";
 import { DateTimePicker } from "@mui/lab";
 import moment from "moment";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
-import { useTheme } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
 const useStyles = makeStyles()({
     button: {

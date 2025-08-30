@@ -1,12 +1,14 @@
-import React from "react";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
+import {
+    Box,
+    Stack,
+    Button,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    styled,
+} from "@mui/material";
 import PropTypes from "prop-types";
-import { Box, Stack } from "@mui/material";
-import { styled } from "@mui/styles";
 import { useCordovaBackButton } from "../hooks/useCordovaBackButton";
 
 const RoundedDialog = styled(Dialog)(({ fullScreen }) => ({

@@ -1,15 +1,8 @@
-import React from "react";
 import "../App.css";
-import Card from "@mui/material/Card";
-import { styled } from "@mui/styles";
-
+import { Card, styled, withTheme, Paper, Box, IconButton } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import withTheme from "@mui/styles/withTheme";
-import { Paper } from "@mui/material";
-import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
-import IconButton from "@mui/material/IconButton";
-import ClearIcon from "@mui/icons-material/Clear";
+import { Clear } from "@mui/icons-material";
 
 export const showHide = makeStyles()({
     hide: {
@@ -27,7 +20,7 @@ export function DismissButton(props) {
             size="small"
             onClick={props.onClick}
         >
-            <ClearIcon />
+            <Clear />
         </IconButton>
     );
 }

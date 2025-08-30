@@ -5,16 +5,15 @@ import {
     ThemeProvider,
     StyledEngineProvider,
     createTheme,
-} from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
+    CssBaseline,
+} from "@mui/material";
 import { SnackbarProvider } from "notistack";
 import { Provider, useDispatch } from "react-redux";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router";
 import mediaQuery from "css-mediaquery";
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { AdapterDateFns } from "@mui/lab";
 import { render as rtlRender } from "@testing-library/react";
 import { initialiseApp } from "./redux/initialise/initialiseActions";
 import rootSaga from "./redux/RootSagas";
@@ -22,6 +21,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./redux/Reducers";
 import { userRoles } from "./apiConsts";
 import SnackNotificationBar from "./components/SnackNotificationBar";
+import { LocalizationProvider } from "@mui/x-date-pickers";
 
 const testUserModel = new models.User({
     name: "whoami",

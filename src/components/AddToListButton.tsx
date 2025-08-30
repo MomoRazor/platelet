@@ -1,6 +1,6 @@
 import React from "react";
 import { IconButton, Stack, Typography } from "@mui/material";
-import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
+import { AddCircleOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 type AddToListButtonProps = {

@@ -1,9 +1,9 @@
 import { TextField, Stack, useMediaQuery } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 import PropTypes from "prop-types";
 import { TextFieldUncontrolled } from "../../../components/TextFields";
-import { useTheme } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 import _ from "lodash";
 import FavouriteLocationsSelect from "../../../components/FavouriteLocationsSelect";
 import { protectedFields } from "../../../apiConsts";

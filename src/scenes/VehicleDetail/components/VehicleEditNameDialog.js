@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { vehicleNameFields } from "./VehicleProfile";
-import { Stack, TextField, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { Stack, TextField, useMediaQuery, useTheme } from "@mui/material";
 
 function VehicleEditNameDialog({ values, onChange }) {
     const [state, setState] = useState({ ...values });

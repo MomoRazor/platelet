@@ -1,8 +1,7 @@
 import React from "react";
 import { encodeUUID } from "../utilities";
-import Typography from "@mui/material/Typography";
 import UserAvatar from "./UserAvatar";
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { ThemedLink } from "../styles/common";
 import * as models from "../models";
 import * as API from "../API";

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { alpha } from "@mui/material";
-import { Link, useHistory, useLocation } from "react-router-dom";
-import CheckBoxIcon from "@mui/icons-material/CheckBox";
-import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import {
+    alpha,
+    useMediaQuery,
+    Box,
+    Grow,
+    Skeleton,
+    ToggleButton,
+    useTheme,
+} from "@mui/material";
+import { Link, useHistory, useLocation } from "react-router";
+import { CheckBoxIcon, CheckBoxOutlineBlankIcon } from "@mui/icons-material";
 import TaskCard from "./TaskCard";
 import * as selectionActions from "../../../redux/selectionMode/selectionModeActions";
 import { encodeUUID } from "../../../utilities";
 import PropTypes from "prop-types";
-import { Box, Grow, Skeleton, ToggleButton } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import { useTheme } from "@mui/styles";
 import TaskContextMenu from "../../../components/ContextMenus/TaskContextMenu";
 import { useDispatch, useSelector } from "react-redux";
 import {

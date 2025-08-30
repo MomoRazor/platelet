@@ -1,12 +1,15 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import LabelItemPair from "../../../components/LabelItemPair";
-import Divider from "@mui/material/Divider";
 import { getWhoami } from "../../../redux/Selectors";
-import { Stack, Typography, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/styles";
-
+import {
+    Stack,
+    Typography,
+    useMediaQuery,
+    Divider,
+    useTheme,
+} from "@mui/material";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 import EditModeToggleButton from "../../../components/EditModeToggleButton";
 import VehicleEditNameDialog from "./VehicleEditNameDialog";

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { vehicleDetailFields, vehicleDateFields } from "./VehicleProfile";
-import { useTheme } from "@mui/styles";
-import { Stack, TextField, useMediaQuery } from "@mui/material";
-import DatePicker from "@mui/lab/DatePicker";
+import { Stack, TextField, useMediaQuery, useTheme } from "@mui/material";
+import { DatePicker } from "@mui/lab";
 
 function VehicleEditDetailsDialog({ values, onChange }) {
     const [state, setState] = useState({

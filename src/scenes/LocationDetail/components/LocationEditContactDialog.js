@@ -1,6 +1,6 @@
 import { Stack, useMediaQuery } from "@mui/material";
 import PropTypes from "prop-types";
-import { useTheme } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 import React from "react";
 import { TextFieldUncontrolled } from "../../../components/TextFields";
 import { locationContactFields } from "./LocationProfile";

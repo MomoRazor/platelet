@@ -1,6 +1,5 @@
-import React from "react";
 import "../index.css";
-import { Route, Switch, useLocation } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router";
 import Dashboard from "../scenes/Dashboard/Dashboard";
 import VehicleList from "../scenes/VehiclesList";
 import UsersList from "../scenes/UsersList";

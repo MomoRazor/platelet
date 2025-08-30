@@ -1,16 +1,13 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 import {
     commentStyles,
     CommentCardStyled,
     PrivateCommentCardStyled,
 } from "../styles/CommentCards";
-import LockIcon from "@mui/icons-material/Lock";
-import Tooltip from "@mui/material/Tooltip";
+import { Lock, Edit } from "@mui/icons-material";
+import { Tooltip, Grid, Typography } from "@mui/material";
 import moment from "moment";
 import CommentAuthor from "./CommentAuthor";
-import EditIcon from "@mui/icons-material/Edit";
 import { showHide } from "../../../styles/common";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
@@ -112,9 +109,7 @@ const CommentCard: React.FC<CommentCardProps> = React.memo(
                                                     : "times"
                                             }.`}
                                         >
-                                            <EditIcon
-                                                className={classes.icon}
-                                            />
+                                            <Edit className={classes.icon} />
                                         </Tooltip>
                                     </Grid>
                                     <Grid item>
@@ -127,7 +122,7 @@ const CommentCard: React.FC<CommentCardProps> = React.memo(
                                             }
                                             title="Only visible to you"
                                         >
-                                            <LockIcon
+                                            <Lock
                                                 className={clsx(
                                                     classes.icon,
                                                     classes.lockIcon

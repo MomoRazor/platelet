@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Stack, TextField, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 import { locationFields } from "./LocationProfile";
 
 function LocationEditDetailsDialog({ values, onChange }) {

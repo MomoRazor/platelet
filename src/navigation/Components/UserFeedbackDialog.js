@@ -14,7 +14,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as queries from "../../graphql/queries";
 import { API, graphqlOperation } from "aws-amplify";
-import { useTheme } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 import {
     displayErrorNotification,
     displayInfoNotification,

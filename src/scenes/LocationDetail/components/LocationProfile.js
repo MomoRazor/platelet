@@ -1,5 +1,5 @@
 import { Box, Divider, Stack, Typography, useMediaQuery } from "@mui/material";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import LocationEditNameDialog from "./LocationEditNameDialog";
 import { useSelector } from "react-redux";
 import EditModeToggleButton from "../../../components/EditModeToggleButton";
@@ -7,7 +7,7 @@ import { getWhoami } from "../../../redux/Selectors";
 import PropTypes from "prop-types";
 import { userRoles } from "../../../apiConsts";
 import LabelItemPair from "../../../components/LabelItemPair";
-import { useTheme } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 import LocationEditContactDialog from "./LocationEditContactDialog";

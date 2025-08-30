@@ -1,7 +1,5 @@
-import { styled } from "@mui/styles";
-import MessageIcon from "@mui/icons-material/Message";
-import { Box } from "@mui/material";
-import Badge, { BadgeProps } from "@mui/material/Badge";
+import { styled, Badge, BadgeProps, Box } from "@mui/material";
+import { Message } from "@mui/icons-material";
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
     "& .MuiBadge-badge": {
@@ -29,7 +27,7 @@ const CommentsBadge: React.FC<CommentsBadgeProps> = ({
         return (
             <Box>
                 <StyledBadge badgeContent={count} color="secondary">
-                    <MessageIcon sx={{ width: iconSize, height: iconSize }} />
+                    <Message sx={{ width: iconSize, height: iconSize }} />
                 </StyledBadge>
             </Box>
         );

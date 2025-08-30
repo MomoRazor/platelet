@@ -1,6 +1,5 @@
-import { Stack, TextField, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/styles";
-import React, { useState } from "react";
+import { Stack, TextField, useMediaQuery, useTheme } from "@mui/material";
+import { useState } from "react";
 import { userAddressFields } from "./UserProfile";
 
 function UserAddressInformationDialog({ values, onChange }) {

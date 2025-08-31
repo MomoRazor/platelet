@@ -1,12 +1,8 @@
 import React from "react";
 import { Box, Grid, IconButton, Stack, TextField } from "@mui/material";
 import DaysSelection, { Days } from "../../../components/DaysSelection";
-import {
-    DateRangePicker,
-    DateRange,
-    DateRangeValidationError,
-} from "@mui/x-date-pickers-pro";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { DateRangePicker, DateRange } from "@mui/x-date-pickers-pro";
+import { ArrowBack } from "@mui/icons-material";
 import UserRoleSelect from "../../../components/UserRoleSelect";
 import CoordinatorPicker from "../../../components/CoordinatorPicker";
 import UserChip from "../../../components/UserChip";
@@ -14,6 +10,7 @@ import RiderPicker from "../../../components/RiderPicker";
 import * as models from "../../../models";
 import { useSelector } from "react-redux";
 import { getWhoami } from "../../../redux/Selectors";
+import { DateRangeValidationError } from "@mui/x-date-pickers-pro/internal/hooks/validation/useDateRangeValidation";
 
 type ReportsControlsProps = {
     adminSelectedUser: models.User | null;
@@ -63,7 +60,8 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
         }
     };
 
-    const handleDateChange = (newDateRange: DateRange<Date>) => {
+    const handleDateChange = (test: unknown) => {
+        const newDateRange = test as DateRange<Date>;
         setCustomDaysRange(newDateRange);
         if (newDateRange[0] && newDateRange[1]) {
             onChangeDateRange(newDateRange[0], newDateRange[1]);
@@ -138,40 +136,40 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
                         // startText="From"
                         maxDate={getMaxDate()}
                         onError={handleCustomRangeError}
-                        // inputFormat="dd/MM/yyyy"
-                        format="dd/MM/yyyy"
+                        inputFormat="dd/MM/yyyy"
+                        // format="dd/MM/yyyy"
                         // endText="To"
                         value={customDaysRange}
                         onChange={handleDateChange}
-                        slotProps={{
-                            textField: {
-                                helperText: errorMessage(dateError?.[0]),
-                                size: "small",
-                                inputProps: { "aria-label": "date range" },
-                            },
-                        }}
-                        // renderInput={(startProps, endProps) => (
-                        //     <Stack spacing={1} direction="row">
-                        //         <TextField
-                        //             {...startProps}
-                        //             size="small"
-                        //             helperText={errorMessage(dateError?.[0])}
-                        //             inputProps={{
-                        //                 ...startProps.inputProps,
-                        //                 "aria-label": "Start date",
-                        //             }}
-                        //         />
-                        //         <TextField
-                        //             {...endProps}
-                        //             size="small"
-                        //             helperText={errorMessage(dateError?.[1])}
-                        //             inputProps={{
-                        //                 ...endProps.inputProps,
-                        //                 "aria-label": "End date",
-                        //             }}
-                        //         />
-                        //     </Stack>
-                        // )}
+                        // slotProps={{
+                        //     textField: {
+                        //         helperText: errorMessage(dateError?.[0]),
+                        //         size: "small",
+                        //         inputProps: { "aria-label": "date range" },
+                        //     },
+                        // }}
+                        renderInput={(startProps, endProps) => (
+                            <Stack spacing={1} direction="row">
+                                <TextField
+                                    {...startProps}
+                                    size="small"
+                                    helperText={errorMessage(dateError?.[0])}
+                                    inputProps={{
+                                        ...startProps.inputProps,
+                                        "aria-label": "Start date",
+                                    }}
+                                />
+                                <TextField
+                                    {...endProps}
+                                    size="small"
+                                    helperText={errorMessage(dateError?.[1])}
+                                    inputProps={{
+                                        ...endProps.inputProps,
+                                        "aria-label": "End date",
+                                    }}
+                                />
+                            </Stack>
+                        )}
                     />
                     <IconButton
                         aria-label="back to days selection"
@@ -179,7 +177,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
                             handleChangeDays(Days.THREE_DAYS);
                         }}
                     >
-                        <ArrowBackIcon />
+                        <ArrowBack />
                     </IconButton>
                 </Stack>
             )}

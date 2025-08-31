@@ -1,9 +1,15 @@
 import * as React from "react";
 import * as models from "../../../models";
-import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
+import {
+    Box,
+    Button,
+    IconButton,
+    Stack,
+    TextField,
+    Typography,
+} from "@mui/material";
+import { Edit, Clear } from "@mui/icons-material";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
-import ClearIcon from "@mui/icons-material/Clear";
 import TimeRelationPicker from "../TimeRelationPicker";
 import { DatePicker } from "@mui/x-date-pickers";
 import TaskScheduleIconText from "../TaskScheduleIconText";
@@ -89,11 +95,11 @@ export const TaskScheduleDetails: React.FC<TaskScheduleDetailsProps> = ({
                         }}
                     >
                         <IconButton onClick={() => setConfirmClear(true)}>
-                            <ClearIcon />
+                            <Clear />
                         </IconButton>
                         {isPaid && (
                             <IconButton onClick={handleSetEditMode}>
-                                <EditIcon />
+                                <Edit />
                             </IconButton>
                         )}
                     </Box>
@@ -129,12 +135,12 @@ export const TaskScheduleDetails: React.FC<TaskScheduleDetailsProps> = ({
                 <Stack sx={{ minWidth: 500 }} spacing={2}>
                     {!hideDate && (
                         <DatePicker
-                            // inputFormat={"dd/MM/yyyy"}
-                            format="dd/MM/yyyy"
+                            inputFormat="dd/MM/yyyy"
+                            // format="dd/MM/yyyy"
                             disablePast
                             value={new Date(scheduleState?.date ?? "")}
                             onChange={handleChangeDate}
-                            // renderInput={(params) => <TextField {...params} />}
+                            renderInput={(params) => <TextField {...params} />}
                         />
                     )}
                     {scheduleState?.date && (

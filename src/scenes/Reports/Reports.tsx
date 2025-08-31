@@ -146,7 +146,7 @@ function Reports() {
     };
 
     return (
-        <PaddedPaper maxWidth={600}>
+        <PaddedPaper maxWidth="600px">
             <Stack direction="column" spacing={2}>
                 <Typography variant="h5">Export to CSV</Typography>
                 <ReportsControls

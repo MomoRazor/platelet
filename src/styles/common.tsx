@@ -1,7 +1,7 @@
 import "../App.css";
-import { Card, styled, withTheme, Paper, Box, IconButton } from "@mui/material";
+import { Card, styled, Paper, Box, IconButton } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import { Link } from "react-router-dom";
+import { Link, LinkProps } from "react-router-dom";
 import { Clear } from "@mui/icons-material";
 
 export const showHide = makeStyles()({
@@ -11,7 +11,11 @@ export const showHide = makeStyles()({
     show: {},
 });
 
-export function DismissButton(props) {
+export interface DismissButtonProps {
+    onClick: () => void;
+}
+
+export function DismissButton(props: DismissButtonProps) {
     return (
         <IconButton
             color="inherit"
@@ -25,8 +29,18 @@ export function DismissButton(props) {
     );
 }
 
-export const ThemedLink = styled(withTheme(Link))((props) => ({
-    color: props.theme.palette.text.primary,
+export interface ThemedLinkProps extends LinkProps {
+    theme: {
+        palette: {
+            text: {
+                primary: string;
+            };
+        };
+    };
+}
+
+export const ThemedLink = styled(Link)<LinkProps>(({ theme }) => ({
+    color: theme.palette.text.primary,
     width: "100%",
 }));
 
@@ -61,7 +75,19 @@ export const StyledStrip = styled(Card)({
     cursor: "pointer",
 });
 
-export function PaddedPaper(props) {
+export interface PaddedPaperProps {
+    padding?: string;
+    maxWidth?: string;
+    minWidth?: string;
+    maxHeight?: string;
+    minHeight?: string;
+    className?: string;
+    width?: string;
+    height?: string;
+    children: React.ReactNode;
+}
+
+export function PaddedPaper(props: PaddedPaperProps) {
     const padding = props.padding ? props.padding : "30px";
     const maxWidth = props.maxWidth ? props.maxWidth : "1280px";
     const minWidth = props.minWidth ? props.minWidth : "30px";

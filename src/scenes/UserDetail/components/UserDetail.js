@@ -11,9 +11,14 @@ import {
 import { DataStore } from "aws-amplify";
 import * as models from "../../../models";
 import { displayErrorNotification } from "../../../redux/notifications/NotificationsActions";
-import { Stack, useMediaQuery, Divider, useTheme } from "@mui/material";
+import {
+    Stack,
+    useMediaQuery,
+    Divider,
+    useTheme,
+    Skeleton,
+} from "@mui/material";
 import CurrentRiderResponsibilitySelector from "./CurrentRiderResponsibilitySelector";
-import Skeleton from "@mui/material/Skeleton";
 import usePossibleRiderResponsibilities from "../../../hooks/usePossibleRiderResponsibilities";
 import EnableDisableUser from "./EnableDisableUser";
 import ResetUserPassword from "./ResetUserPassword";
@@ -120,17 +125,17 @@ export default function UserDetail({ userId }) {
                 direction={isSm ? "column" : "row"}
                 spacing={1}
             >
-                <PaddedPaper maxWidth={700}>
-                    <Stack direction={"row"} spacing={3}>
+                <PaddedPaper maxWidth="700px">
+                    <Stack direction="row" spacing={3}>
                         <Skeleton variant="text" width={300} height={50} />
                     </Stack>
                     <Divider />
-                    <Stack direction={"column"}>
+                    <Stack direction="column">
                         <Skeleton variant="text" maxWidth={700} height={50} />
                         <Skeleton variant="text" maxWidth={700} height={50} />
                     </Stack>
                     <Divider />
-                    <Stack direction={"column"}>
+                    <Stack direction="column">
                         {[...Array(4)].map((ele) => (
                             <Skeleton
                                 variant="text"
@@ -156,11 +161,11 @@ export default function UserDetail({ userId }) {
                         ))}
                     </Stack>
                 </PaddedPaper>
-                <PaddedPaper maxWidth={400}>
+                <PaddedPaper maxWidth="400px">
                     <Stack
                         container
-                        direction={"column"}
-                        alignItems={"center"}
+                        direction="column"
+                        alignItems="center"
                         spacing={2}
                     >
                         <Skeleton
@@ -182,7 +187,7 @@ export default function UserDetail({ userId }) {
                 direction={isSm ? "column" : "row"}
                 spacing={1}
             >
-                <PaddedPaper maxWidth={700}>
+                <PaddedPaper maxWidth="700px">
                     <Stack direction="column" spacing={3}>
                         <CurrentRiderResponsibilitySelector
                             available={possibleRiderResponsibilities}

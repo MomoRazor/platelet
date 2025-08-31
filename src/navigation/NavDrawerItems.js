@@ -1,23 +1,23 @@
 import { useSelector } from "react-redux";
 import {
-    ListItem,
     ListItemIcon,
     ListItemText,
+    ListItemButton,
     Divider,
     List,
 } from "@mui/material";
 import {
-    HistoryIcon,
-    CalendarMonthIcon,
-    TwoWheelerIcon,
-    PeopleAltIcon,
-    DashboardIcon,
-    LocationCityIcon,
-    BarChartIcon,
-    DescriptionIcon,
+    History,
+    CalendarMonth,
+    TwoWheeler,
+    PeopleAlt,
+    Dashboard,
+    LocationCity,
+    BarChart,
+    Description,
+    SupervisorAccount,
 } from "@mui/icons-material";
-import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import * as models from "../models";
 import PropTypes from "prop-types";
 import { getWhoami } from "../redux/Selectors";
@@ -34,18 +34,18 @@ function NavDrawerItems(props) {
     if (whoami.roles) {
         if (whoami.roles.includes("ADMIN")) {
             adminLink = (
-                <ListItem
+                <ListItemButton
                     onClick={onSelect}
                     selected={menuIndex === "admin"}
                     component={Link}
-                    to={"/admin"}
+                    to="/admin"
                     button
                 >
                     <ListItemIcon>
-                        <SupervisorAccountIcon />
+                        <SupervisorAccount />
                     </ListItemIcon>
-                    <ListItemText primary={"Admin"} />
-                </ListItem>
+                    <ListItemText primary="Admin" />
+                </ListItemButton>
             );
         }
         if (
@@ -53,46 +53,46 @@ function NavDrawerItems(props) {
             whoami.roles.includes(models.Role.COORDINATOR)
         ) {
             historyLink = (
-                <ListItem
+                <ListItemButton
                     onClick={onSelect}
                     selected={menuIndex === "history"}
                     component={Link}
-                    to={"/history"}
+                    to="/history"
                     button
                 >
                     <ListItemIcon>
-                        <HistoryIcon />
+                        <History />
                     </ListItemIcon>
-                    <ListItemText primary={"History"} />
-                </ListItem>
+                    <ListItemText primary="History" />
+                </ListItemButton>
             );
             statisticsLink = (
-                <ListItem
+                <ListItemButton
                     onClick={onSelect}
                     selected={menuIndex === "statistics"}
                     component={Link}
-                    to={"/statistics"}
+                    to="/statistics"
                     button
                 >
                     <ListItemIcon>
-                        <BarChartIcon />
+                        <BarChart />
                     </ListItemIcon>
-                    <ListItemText primary={"Statistics"} />
-                </ListItem>
+                    <ListItemText primary="Statistics" />
+                </ListItemButton>
             );
             scheduledTasksLink = (
-                <ListItem
+                <ListItemButton
                     onClick={onSelect}
                     selected={menuIndex === "scheduled"}
                     component={Link}
-                    to={"/scheduled"}
+                    to="/scheduled"
                     button
                 >
                     <ListItemIcon>
-                        <CalendarMonthIcon />
+                        <CalendarMonth />
                     </ListItemIcon>
-                    <ListItemText primary={"Scheduled"} />
-                </ListItem>
+                    <ListItemText primary="Scheduled" />
+                </ListItemButton>
             );
         }
     }
@@ -101,7 +101,7 @@ function NavDrawerItems(props) {
         <div className={props.className}>
             <Divider />
             <List component="nav">
-                <ListItem
+                <ListItemButton
                     onClick={onSelect}
                     selected={menuIndex === "dashboard"}
                     component={Link}
@@ -109,11 +109,11 @@ function NavDrawerItems(props) {
                     button
                 >
                     <ListItemIcon>
-                        <DashboardIcon />
+                        <Dashboard />
                     </ListItemIcon>
-                    <ListItemText primary={"Dashboard"} />
-                </ListItem>
-                <ListItem
+                    <ListItemText primary="Dashboard" />
+                </ListItemButton>
+                <ListItemButton
                     onClick={onSelect}
                     selected={menuIndex === "users"}
                     component={Link}
@@ -121,11 +121,11 @@ function NavDrawerItems(props) {
                     button
                 >
                     <ListItemIcon>
-                        <PeopleAltIcon />
+                        <PeopleAlt />
                     </ListItemIcon>
-                    <ListItemText primary={"Users"} />
-                </ListItem>
-                <ListItem
+                    <ListItemText primary="Users" />
+                </ListItemButton>
+                <ListItemButton
                     onClick={onSelect}
                     selected={menuIndex === "vehicles"}
                     component={Link}
@@ -133,11 +133,11 @@ function NavDrawerItems(props) {
                     button
                 >
                     <ListItemIcon>
-                        <TwoWheelerIcon />
+                        <TwoWheeler />
                     </ListItemIcon>
-                    <ListItemText primary={"Vehicles"} />
-                </ListItem>
-                <ListItem
+                    <ListItemText primary="Vehicles" />
+                </ListItemButton>
+                <ListItemButton
                     onClick={onSelect}
                     selected={menuIndex === "locations"}
                     component={Link}
@@ -145,11 +145,11 @@ function NavDrawerItems(props) {
                     button
                 >
                     <ListItemIcon>
-                        <LocationCityIcon />
+                        <LocationCity />
                     </ListItemIcon>
-                    <ListItemText primary={"Locations"} />
-                </ListItem>
-                <ListItem
+                    <ListItemText primary="Locations" />
+                </ListItemButton>
+                <ListItemButton
                     onClick={onSelect}
                     selected={menuIndex === "reports"}
                     component={Link}
@@ -157,10 +157,10 @@ function NavDrawerItems(props) {
                     button
                 >
                     <ListItemIcon>
-                        <DescriptionIcon />
+                        <Description />
                     </ListItemIcon>
-                    <ListItemText primary={"Reports"} />
-                </ListItem>
+                    <ListItemText primary="Reports" />
+                </ListItemButton>
                 {scheduledTasksLink}
                 {statisticsLink}
                 {historyLink}

@@ -229,7 +229,7 @@ const AdminAddScheduledTask: React.FC = () => {
     }
 
     return (
-        <PaddedPaper maxWidth={800}>
+        <PaddedPaper maxWidth="800px">
             <Stack spacing={2} divider={<Divider />}>
                 <ScheduledTaskCallerDetails
                     onChangeContact={onChangeContact}

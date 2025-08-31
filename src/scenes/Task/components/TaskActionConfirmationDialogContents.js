@@ -1,8 +1,7 @@
 import React from "react";
-import { useTheme } from "@mui/material/styles";
-import { Stack, TextField, useMediaQuery } from "@mui/material";
+import { Stack, TextField, useMediaQuery, useTheme } from "@mui/material";
 import PropTypes from "prop-types";
-import { DateTimePicker } from "@mui/lab";
+import { DateTimePicker } from "@mui/x-date-pickers";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 import { displayErrorNotification } from "../../../redux/notifications/NotificationsActions";
 import { useDispatch } from "react-redux";
@@ -112,7 +111,7 @@ function TaskActionConfirmationDialogContents(props) {
                         disableFuture
                         onError={() => setErrorState(true)}
                         value={time}
-                        inputFormat={"dd/MM/yyyy HH:mm"}
+                        inputFormat="dd/MM/yyyy HH:mm"
                         openTo="hours"
                         onChange={handleTimeChange}
                         renderInput={(params) => (

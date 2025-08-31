@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
-import { DateTimePicker } from "@mui/lab";
-import { Stack, TextField, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { DateTimePicker } from "@mui/x-date-pickers";
+import { Stack, TextField, useMediaQuery, useTheme } from "@mui/material";
 
 function TimeAndNamePickerDialog({
     open,
@@ -38,7 +37,7 @@ function TimeAndNamePickerDialog({
                     value={state.time}
                     onError={() => setErrorState(true)}
                     disableFuture={disableFuture}
-                    inputFormat={"dd/MM/yyyy HH:mm"}
+                    inputFormat="dd/MM/yyyy HH:mm"
                     openTo="hours"
                     onChange={(value) => {
                         setState((prevState) => ({

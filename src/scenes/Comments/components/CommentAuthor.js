@@ -1,5 +1,5 @@
 import UserAvatar from "../../../components/UserAvatar";
-import { Link as RouterLink } from "react-router";
+import { Link } from "react-router-dom";
 import { encodeUUID } from "../../../utilities";
 import { makeStyles } from "tss-react/mui";
 import PropTypes from "prop-types";
@@ -22,7 +22,7 @@ const CommentAuthor = (props) => {
         return null;
     }
     return (
-        <Grid container alignItems={"center"} spacing={1} direction={"row"}>
+        <Grid container alignItems="center" spacing={1} direction="row">
             <Grid item>
                 {props.disableLink ? (
                     <UserAvatar
@@ -34,7 +34,7 @@ const CommentAuthor = (props) => {
                 ) : (
                     <ThemedLink
                         className={classes.avatar}
-                        component={RouterLink}
+                        component={Link}
                         to={"/user/" + encodeUUID(props.userId)}
                     >
                         <UserAvatar
@@ -52,7 +52,7 @@ const CommentAuthor = (props) => {
                 ) : (
                     <ThemedLink
                         className={classes.link}
-                        component={RouterLink}
+                        component={Link}
                         to={"/user/" + encodeUUID(props.userId)}
                     >
                         <Typography>{props.displayName}</Typography>

@@ -1,16 +1,20 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import Typography from "@mui/material/Typography";
+import {
+    Typography,
+    IconButton,
+    Stack,
+    TextField,
+    Tooltip,
+    useMediaQuery,
+    useTheme,
+} from "@mui/material";
 import Moment from "react-moment";
-import CancelIcon from "@mui/icons-material/Cancel";
-import IconButton from "@mui/material/IconButton";
-import { Stack, TextField, Tooltip, useMediaQuery } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
+import { Edit, Cancel } from "@mui/icons-material";
 import { makeStyles } from "tss-react/mui";
-import { DateTimePicker } from "@mui/lab";
+import { DateTimePicker } from "@mui/x-date-pickers";
 import moment from "moment";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
-import { useTheme } from "@mui/material/styles";
 
 const useStyles = makeStyles()({
     button: {
@@ -52,10 +56,10 @@ function TimePicker(props) {
         return (
             <>
                 <Stack
-                    direction={"row"}
+                    direction="row"
                     spacing={1}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
+                    justifyContent="space-between"
+                    alignItems="center"
                 >
                     <Tooltip
                         title={
@@ -70,9 +74,7 @@ function TimePicker(props) {
                             {!props.basicTime && isToday() ? (
                                 <>
                                     Today at{" "}
-                                    <Moment format={"HH:mm"}>
-                                        {props.time}
-                                    </Moment>
+                                    <Moment format="HH:mm">{props.time}</Moment>
                                 </>
                             ) : (
                                 <Moment format={momentFormat}>
@@ -83,26 +85,26 @@ function TimePicker(props) {
                     </Tooltip>
                     {!props.hideEditIcon && (
                         <>
-                            <Tooltip title={"Edit"}>
+                            <Tooltip title="Edit">
                                 <IconButton
                                     aria-label={`edit ${props.label}`}
                                     disabled={props.disabled}
                                     onClick={toggleEditMode}
                                     size="small"
                                 >
-                                    <EditIcon />
+                                    <Edit />
                                 </IconButton>
                             </Tooltip>
                             {!props.disableClear && (
-                                <Tooltip title={"Clear"}>
+                                <Tooltip title="Clear">
                                     <IconButton
-                                        aria-label={"Clear"}
+                                        aria-label="Clear"
                                         className={classes.button}
                                         disabled={props.disabled}
                                         onClick={onClear}
                                         size="small"
                                     >
-                                        <CancelIcon />
+                                        <Cancel />
                                     </IconButton>
                                 </Tooltip>
                             )}
@@ -120,7 +122,7 @@ function TimePicker(props) {
                     <DateTimePicker
                         label={props.label}
                         value={state}
-                        inputFormat={"dd/MM/yyyy HH:mm"}
+                        inputFormat="dd/MM/yyyy HH:mm"
                         openTo="hours"
                         onChange={(value) => setState(value)}
                         renderInput={(params) => (

@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { DismissButton } from "../styles/common";
 

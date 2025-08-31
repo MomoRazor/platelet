@@ -6,7 +6,7 @@ import ScheduledTaskCard from "./components/ScheduledTaskCard";
 import { useSelector } from "react-redux";
 import { getWhoami } from "../../redux/Selectors";
 import * as models from "../../models";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { encodeUUID } from "../../utilities";
 import ScheduledTasksEnableDisableAllButtons from "./components/ScheduledTasksEnableDisableAllButtons";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { RateReviewIcon, SignalWifiOff } from "@mui/icons-material";
+import { RateReview, SignalWifiOff } from "@mui/icons-material";
 import {
     IconButton,
     Menu,
@@ -10,7 +10,7 @@ import {
     useTheme,
     useMediaQuery,
 } from "@mui/material";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { encodeUUID } from "../../utilities";
 import UserAvatar from "../../components/UserAvatar";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,16 +38,16 @@ function LightToggleProfileMenu() {
 
     return (
         <Stack
-            direction={"row"}
-            justifyContent={"flex-end"}
-            alignItems={"center"}
+            direction="row"
+            justifyContent="flex-end"
+            alignItems="center"
             spacing={1}
         >
             <Box>
                 <SyncStatusCircleLoader />
                 {process.env.REACT_APP_DEMO_MODE !== "true" &&
                     !networkStatus && (
-                        <Tooltip title={"You are working offline"}>
+                        <Tooltip title="You are working offline">
                             <IconButton size="large">
                                 <SignalWifiOff />
                             </IconButton>
@@ -55,7 +55,7 @@ function LightToggleProfileMenu() {
                     )}
             </Box>
             {process.env.REACT_APP_DEMO_MODE !== "true" && !isSm && (
-                <Tooltip title={"Send feedback"}>
+                <Tooltip title="Send feedback">
                     <IconButton
                         onClick={() => {
                             setFeedbackOpen(true);
@@ -63,7 +63,7 @@ function LightToggleProfileMenu() {
                         aria-label="send feedback"
                         size="large"
                     >
-                        <RateReviewIcon />
+                        <RateReview />
                     </IconButton>
                 </Tooltip>
             )}

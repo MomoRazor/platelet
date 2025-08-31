@@ -8,8 +8,9 @@ import {
     ToggleButton,
     useTheme,
 } from "@mui/material";
-import { Link, useHistory, useLocation } from "react-router";
-import { CheckBoxIcon, CheckBoxOutlineBlankIcon } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import { useHistory, useLocation } from "react-router";
+import { CheckBox, CheckBoxOutlineBlank } from "@mui/icons-material";
 import TaskCard from "./TaskCard";
 import * as selectionActions from "../../../redux/selectionMode/selectionModeActions";
 import { encodeUUID } from "../../../utilities";
@@ -218,9 +219,9 @@ const TaskItem = React.memo((props) => {
                                 onClick={handleSelectItem}
                             >
                                 {isSelected ? (
-                                    <CheckBoxIcon />
+                                    <CheckBox />
                                 ) : (
-                                    <CheckBoxOutlineBlankIcon />
+                                    <CheckBoxOutlineBlank />
                                 )}
                             </ToggleButton>
                         </div>

@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Clear, Edit } from "@mui/icons-material";
+import ClearIcon from "@mui/icons-material/Clear";
+import EditIcon from "@mui/icons-material/Edit";
 import {
     Button,
     IconButton,
@@ -8,13 +9,13 @@ import {
     Tooltip,
     Typography,
     useMediaQuery,
-    useTheme,
 } from "@mui/material";
 import TimeRelationPicker from "./TimeRelationPicker";
+import { useTheme } from "@mui/material/styles";
 import * as models from "../../models";
 import ConfirmationDialog from "../../components/ConfirmationDialog";
 import { calculateBetweenIsOneDay } from "../../utilities/calculateBetweenIsOneDay";
-import { DatePicker } from "@mui/x-date-pickers";
+import { DatePicker } from "@mui/lab";
 import moment from "moment";
 
 export enum ScheduledDatePickerOption {
@@ -242,12 +243,12 @@ const PickUpAndDeliverSchedule: React.FC<PickUpAndDeliverScheduleProps> = ({
                         <Stack direction="row">
                             <Tooltip title={"Clear schedule"}>
                                 <IconButton onClick={handleClear}>
-                                    <Clear />
+                                    <ClearIcon />
                                 </IconButton>
                             </Tooltip>
                             <Tooltip title={"Edit schedule"}>
                                 <IconButton onClick={handleOpen}>
-                                    <Edit />
+                                    <EditIcon />
                                 </IconButton>
                             </Tooltip>
                         </Stack>
@@ -264,14 +265,15 @@ const PickUpAndDeliverSchedule: React.FC<PickUpAndDeliverScheduleProps> = ({
                 <Stack sx={{ minWidth: 500 }} spacing={2}>
                     {!hideDate && (
                         <DatePicker
-                            inputFormat="dd/MM/yyyy"
-                            // format="dd/MM/yyyy"
+                            inputFormat={"dd/MM/yyyy"}
                             disablePast
                             value={state?.date}
-                            onChange={(date) =>
+                            onChange={(date: any) =>
                                 handleSetCustomDate(date ?? null)
                             }
-                            renderInput={(params) => <TextField {...params} />}
+                            renderInput={(params: any) => (
+                                <TextField {...params} />
+                            )}
                         />
                     )}
                     <TimeRelationPicker

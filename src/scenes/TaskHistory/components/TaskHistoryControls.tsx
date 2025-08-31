@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "@mui/material/styles";
 import {
     IconButton,
     MenuItem,
@@ -8,13 +9,13 @@ import {
     TextField,
     Tooltip,
     useMediaQuery,
-    useTheme,
 } from "@mui/material";
 import { ModelSortDirection } from "../../../API";
-import { Refresh, ArrowBack } from "@mui/icons-material";
+import RefreshIcon from "@mui/icons-material/Refresh";
 import DaysSelection, { Days } from "../../../components/DaysSelection";
 import LoadingSpinner from "../../../components/LoadingSpinner";
-import { DateRangePicker, DateRange } from "@mui/x-date-pickers-pro";
+import { DateRangePicker, DateRange } from "@mui/lab";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 type TaskHistoryControlsProps = {
     sortDirection: ModelSortDirection;
@@ -55,8 +56,7 @@ const TaskHistoryControls: React.FC<TaskHistoryControlsProps> = ({
         }
     };
 
-    const handleDateChange = (current: unknown) => {
-        const newDateRange = current as DateRange<Date>;
+    const handleDateChange = (newDateRange: DateRange<Date>) => {
         setCustomDaysRange(newDateRange);
         if (newDateRange[0] && newDateRange[1]) {
             setDateRange(newDateRange[0], newDateRange[1]);
@@ -79,7 +79,7 @@ const TaskHistoryControls: React.FC<TaskHistoryControlsProps> = ({
                 data-testid="refresh-task-history"
                 onClick={handleRefresh}
             >
-                <Refresh
+                <RefreshIcon
                     key={refreshKey}
                     sx={{
                         animation: "spin 1s linear reverse",
@@ -165,19 +165,11 @@ const TaskHistoryControls: React.FC<TaskHistoryControlsProps> = ({
                 {customRange && (
                     <Stack direction="row">
                         <DateRangePicker
-                            // format="dd/MM/yyyy"
-                            // startText="From"
+                            startText="From"
                             inputFormat="dd/MM/yyyy"
-                            // endText="To"
+                            endText="To"
                             value={customDaysRange}
                             onChange={handleDateChange}
-                            // slotProps={{
-                            //     textField: {
-                            //         inputProps: {
-                            //             "aria-label": "Date range",
-                            //         },
-                            //     },
-                            // }}
                             renderInput={(startProps, endProps) => (
                                 <Stack spacing={1} direction="row">
                                     <TextField
@@ -205,7 +197,7 @@ const TaskHistoryControls: React.FC<TaskHistoryControlsProps> = ({
                                 handleChangeDays(Days.CUSTOM);
                             }}
                         >
-                            <ArrowBack />
+                            <ArrowBackIcon />
                         </IconButton>
                     </Stack>
                 )}

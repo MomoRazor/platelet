@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
-import { DateTimePicker } from "@mui/x-date-pickers";
+import { DateTimePicker } from "@mui/lab";
 import { Stack, TextField, useMediaQuery, useTheme } from "@mui/material";
 
 function TimeAndNamePickerDialog({

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, IconButton, Stack, TextField } from "@mui/material";
 import DaysSelection, { Days } from "../../../components/DaysSelection";
-import { DateRangePicker, DateRange } from "@mui/x-date-pickers-pro";
+import { DateRangePicker, DateRange } from "@mui/lab";
 import { ArrowBack } from "@mui/icons-material";
 import UserRoleSelect from "../../../components/UserRoleSelect";
 import CoordinatorPicker from "../../../components/CoordinatorPicker";
@@ -10,7 +10,6 @@ import RiderPicker from "../../../components/RiderPicker";
 import * as models from "../../../models";
 import { useSelector } from "react-redux";
 import { getWhoami } from "../../../redux/Selectors";
-import { DateRangeValidationError } from "@mui/x-date-pickers-pro/internal/hooks/validation/useDateRangeValidation";
 
 type ReportsControlsProps = {
     adminSelectedUser: models.User | null;
@@ -36,8 +35,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
     const [customDaysRange, setCustomDaysRange] = React.useState<
         DateRange<Date>
     >([new Date(), new Date()]);
-    const [dateError, setDateError] =
-        React.useState<DateRangeValidationError | null>(null);
+    const [dateError, setDateError] = React.useState<any | null>(null);
     const whoami = useSelector(getWhoami);
     const isAdmin = whoami?.roles?.includes(models.Role.ADMIN);
 
@@ -60,8 +58,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
         }
     };
 
-    const handleDateChange = (test: unknown) => {
-        const newDateRange = test as DateRange<Date>;
+    const handleDateChange = (newDateRange: DateRange<Date>) => {
         setCustomDaysRange(newDateRange);
         if (newDateRange[0] && newDateRange[1]) {
             onChangeDateRange(newDateRange[0], newDateRange[1]);
@@ -91,7 +88,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
         }
     };
 
-    const handleCustomRangeError = (error: DateRangeValidationError) => {
+    const handleCustomRangeError = (error: any) => {
         if (error[0] || error[1]) {
             onErrorState(true);
             setDateError(error);
@@ -133,22 +130,14 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
                 <Stack direction="row">
                     <DateRangePicker
                         disableFuture
-                        // startText="From"
+                        startText="From"
                         maxDate={getMaxDate()}
                         onError={handleCustomRangeError}
                         inputFormat="dd/MM/yyyy"
-                        // format="dd/MM/yyyy"
-                        // endText="To"
+                        endText="To"
                         value={customDaysRange}
                         onChange={handleDateChange}
-                        // slotProps={{
-                        //     textField: {
-                        //         helperText: errorMessage(dateError?.[0]),
-                        //         size: "small",
-                        //         inputProps: { "aria-label": "date range" },
-                        //     },
-                        // }}
-                        renderInput={(startProps, endProps) => (
+                        renderInput={(startProps: any, endProps: any) => (
                             <Stack spacing={1} direction="row">
                                 <TextField
                                     {...startProps}

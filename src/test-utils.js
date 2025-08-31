@@ -5,22 +5,23 @@ import {
     ThemeProvider,
     StyledEngineProvider,
     createTheme,
-    CssBaseline,
-} from "@mui/material";
+} from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
 import { SnackbarProvider } from "notistack";
-import { Provider } from "react-redux";
-import { MemoryRouter } from "react-router";
+import { Provider, useDispatch } from "react-redux";
+import { MemoryRouter } from "react-router-dom";
 import mediaQuery from "css-mediaquery";
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { render as rtlRender } from "@testing-library/react";
+import { initialiseApp } from "./redux/initialise/initialiseActions";
 import rootSaga from "./redux/RootSagas";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./redux/Reducers";
 import { userRoles } from "./apiConsts";
 import SnackNotificationBar from "./components/SnackNotificationBar";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
 const testUserModel = new models.User({
     name: "whoami",
@@ -92,8 +93,10 @@ const sagaOptions = {
 };
 
 function TestApp(props) {
+    const dispatch = useDispatch();
     function initialise() {
         return;
+        dispatch(initialiseApp());
     }
     React.useEffect(initialise, []);
     <SnackNotificationBar />;

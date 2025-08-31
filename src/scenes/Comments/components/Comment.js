@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "tss-react/mui";
 import PropTypes from "prop-types";
 import Linkify from "react-linkify";
 import { commentStyles } from "../styles/CommentCards";

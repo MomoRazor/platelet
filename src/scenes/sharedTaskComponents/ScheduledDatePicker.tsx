@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Chip, Box, Stack, TextField } from "@mui/material";
-import { DatePicker } from "@mui/x-date-pickers";
+import { Chip, Box, TextField, Stack } from "@mui/material";
+import { DatePicker } from "@mui/lab";
 import { ScheduledDatePickerOption } from "./PickUpAndDeliverSchedule";
 
 type ScheduledDatePickerProps = {
@@ -56,12 +56,11 @@ const ScheduledDatePicker: React.FC<ScheduledDatePickerProps> = ({
             </Box>
             {isCustom && (
                 <DatePicker
-                    inputFormat="dd/MM/yyyy"
-                    // format="dd/MM/yyyy"
+                    inputFormat={"dd/MM/yyyy"}
                     disablePast
                     value={customDate}
                     onChange={onSelectCustomDate}
-                    renderInput={(params) => <TextField {...params} />}
+                    renderInput={(params: any) => <TextField {...params} />}
                 />
             )}
         </Stack>

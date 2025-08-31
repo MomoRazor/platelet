@@ -8,10 +8,11 @@ import {
     TextField,
     Typography,
 } from "@mui/material";
-import { Edit, Clear } from "@mui/icons-material";
+import EditIcon from "@mui/icons-material/Edit";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
+import ClearIcon from "@mui/icons-material/Clear";
 import TimeRelationPicker from "../TimeRelationPicker";
-import { DatePicker } from "@mui/x-date-pickers";
+import { DatePicker } from "@mui/lab";
 import TaskScheduleIconText from "../TaskScheduleIconText";
 import { Schedule } from "../PickUpAndDeliverSchedule";
 import { convertScheduleToTaskData } from "../../../utilities/convertScheduleToTaskData";
@@ -95,11 +96,11 @@ export const TaskScheduleDetails: React.FC<TaskScheduleDetailsProps> = ({
                         }}
                     >
                         <IconButton onClick={() => setConfirmClear(true)}>
-                            <Clear />
+                            <ClearIcon />
                         </IconButton>
                         {isPaid && (
                             <IconButton onClick={handleSetEditMode}>
-                                <Edit />
+                                <EditIcon />
                             </IconButton>
                         )}
                     </Box>
@@ -135,12 +136,13 @@ export const TaskScheduleDetails: React.FC<TaskScheduleDetailsProps> = ({
                 <Stack sx={{ minWidth: 500 }} spacing={2}>
                     {!hideDate && (
                         <DatePicker
-                            inputFormat="dd/MM/yyyy"
-                            // format="dd/MM/yyyy"
+                            inputFormat={"dd/MM/yyyy"}
                             disablePast
                             value={new Date(scheduleState?.date ?? "")}
                             onChange={handleChangeDate}
-                            renderInput={(params) => <TextField {...params} />}
+                            renderInput={(params: any) => (
+                                <TextField {...params} />
+                            )}
                         />
                     )}
                     {scheduleState?.date && (

@@ -1,4 +1,4 @@
-import { DateTimePicker } from "@mui/x-date-pickers";
+import { DateTimePicker } from "@mui/lab";
 import * as models from "../../../models";
 import { Stack, TextField, Typography } from "@mui/material";
 import React from "react";
@@ -90,17 +90,9 @@ export const CallerDetails: React.FC<CallerDetailType> = ({
             </Typography>
             <DateTimePicker
                 label="Time of call"
-                // format="dd/MM/yyyy HH:mm"
                 inputFormat="dd/MM/yyyy HH:mm"
                 ampm={false}
-                // slotProps={{
-                //     textField: {
-                //         inputProps: {
-                //             "aria-label": "Time of call",
-                //         },
-                //     },
-                // }}
-                renderInput={(params) => {
+                renderInput={(params: any) => {
                     const { inputProps } = params;
                     return (
                         <TextField
@@ -113,7 +105,7 @@ export const CallerDetails: React.FC<CallerDetailType> = ({
                     );
                 }}
                 value={timeOfCall}
-                onChange={(v) => {
+                onChange={(v: any) => {
                     if (v) onChangeTimeOfCall(v);
                 }}
                 onError={onInvalidTimeOfCall}

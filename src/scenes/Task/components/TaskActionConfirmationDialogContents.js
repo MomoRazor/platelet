@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack, TextField, useMediaQuery, useTheme } from "@mui/material";
 import PropTypes from "prop-types";
-import { DateTimePicker } from "@mui/x-date-pickers";
+import { DateTimePicker } from "@mui/lab";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 import { displayErrorNotification } from "../../../redux/notifications/NotificationsActions";
 import { useDispatch } from "react-redux";

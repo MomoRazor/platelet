@@ -1,18 +1,18 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import Moment from "react-moment";
+import { Cancel, Edit } from "@mui/icons-material";
 import {
-    Typography,
-    IconButton,
     Stack,
     TextField,
     Tooltip,
     useMediaQuery,
     useTheme,
+    IconButton,
+    Typography,
 } from "@mui/material";
-import Moment from "react-moment";
-import { Edit, Cancel } from "@mui/icons-material";
 import { makeStyles } from "tss-react/mui";
-import { DateTimePicker } from "@mui/x-date-pickers";
+import { DateTimePicker } from "@mui/lab";
 import moment from "moment";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 

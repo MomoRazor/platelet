@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import DeliverablesSkeleton from "./components/DeliverablesSkeleton";
-import { Box, Stack, Typography } from "@mui/material";
-import Link from "@mui/material/Link";
+import { Box, Stack, Typography, Link } from "@mui/material";
 import { DataStore, Predicates, SortDirection } from "aws-amplify";
 import * as models from "../../models/index";
 import { dataStoreModelSyncedStatusSelector } from "../../redux/Selectors";

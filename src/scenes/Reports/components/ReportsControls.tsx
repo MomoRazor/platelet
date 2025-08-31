@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Grid, IconButton, Stack, TextField } from "@mui/material";
 import DaysSelection, { Days } from "../../../components/DaysSelection";
 import { DateRangePicker, DateRange } from "@mui/lab";
-import { ArrowBack } from "@mui/icons-material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import UserRoleSelect from "../../../components/UserRoleSelect";
 import CoordinatorPicker from "../../../components/CoordinatorPicker";
 import UserChip from "../../../components/UserChip";
@@ -10,6 +10,7 @@ import RiderPicker from "../../../components/RiderPicker";
 import * as models from "../../../models";
 import { useSelector } from "react-redux";
 import { getWhoami } from "../../../redux/Selectors";
+import { DateRangeValidationError } from "@mui/lab/internal/pickers/date-utils";
 
 type ReportsControlsProps = {
     adminSelectedUser: models.User | null;
@@ -35,7 +36,8 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
     const [customDaysRange, setCustomDaysRange] = React.useState<
         DateRange<Date>
     >([new Date(), new Date()]);
-    const [dateError, setDateError] = React.useState<any | null>(null);
+    const [dateError, setDateError] =
+        React.useState<DateRangeValidationError | null>(null);
     const whoami = useSelector(getWhoami);
     const isAdmin = whoami?.roles?.includes(models.Role.ADMIN);
 
@@ -88,7 +90,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
         }
     };
 
-    const handleCustomRangeError = (error: any) => {
+    const handleCustomRangeError = (error: DateRangeValidationError) => {
         if (error[0] || error[1]) {
             onErrorState(true);
             setDateError(error);
@@ -137,7 +139,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
                         endText="To"
                         value={customDaysRange}
                         onChange={handleDateChange}
-                        renderInput={(startProps: any, endProps: any) => (
+                        renderInput={(startProps, endProps) => (
                             <Stack spacing={1} direction="row">
                                 <TextField
                                     {...startProps}
@@ -166,7 +168,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
                             handleChangeDays(Days.THREE_DAYS);
                         }}
                     >
-                        <ArrowBack />
+                        <ArrowBackIcon />
                     </IconButton>
                 </Stack>
             )}

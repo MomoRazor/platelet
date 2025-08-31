@@ -1,6 +1,6 @@
 import ForwardBackButtons from "./ForwardBackButtons";
 import userEvent from "@testing-library/user-event";
-import { Router, RouterProps } from "react-router";
+import { Router, RouterProps } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
 
 describe("ForwardBackButtons", () => {

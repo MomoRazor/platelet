@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { DateTimePicker } from "@mui/lab";
 import { TextField } from "@mui/material";
+import { DateTimePicker } from "@mui/lab";
 
 function isValidDate(d: Date | number | null) {
     return d instanceof Date && !isNaN(d as any);
@@ -10,13 +10,13 @@ type MultipleSelectionActionsSetTimeProps = {
     onChange?: (...args: any[]) => any;
 };
 
-const MultipleSelectionActionsSetTime: React.FunctionComponent<
+const MultipleSelectionActionsSetTime: React.SFC<
     MultipleSelectionActionsSetTimeProps
 > = ({ onChange = () => {} }) => {
     const [time, setTime] = React.useState<Date | null>(new Date());
 
-    function handleTimeChange(value: unknown) {
-        setTime(value as Date | null);
+    function handleTimeChange(value: Date | null) {
+        setTime(value);
     }
 
     useEffect(() => {
@@ -27,15 +27,9 @@ const MultipleSelectionActionsSetTime: React.FunctionComponent<
     return (
         <DateTimePicker
             value={time}
-            // format="dd/MM/yyyy HH:mm"
-            inputFormat="dd/MM/yyyy HH:mm"
+            inputFormat={"dd/MM/yyyy HH:mm"}
             openTo="hours"
             onChange={handleTimeChange}
-            // slotProps={{
-            //     textField: {
-            //         fullWidth: true,
-            //     },
-            // }}
             renderInput={(params) => <TextField fullWidth {...params} />}
         />
     );

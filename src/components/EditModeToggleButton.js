@@ -1,5 +1,7 @@
-import { Edit } from "@mui/icons-material";
-import { Tooltip, IconButton } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import EditIcon from "@mui/icons-material/Edit";
+import React from "react";
+import Tooltip from "@mui/material/Tooltip";
 import PropTypes from "prop-types";
 
 function EditModeToggleButton(props) {
@@ -10,7 +12,7 @@ function EditModeToggleButton(props) {
                 aria-label="Finish"
                 onClick={() => props.onChange(false)}
             >
-                <Edit />
+                <EditIcon />
             </IconButton>
         </Tooltip>
     ) : (
@@ -20,7 +22,7 @@ function EditModeToggleButton(props) {
                 aria-label={props["aria-label"]}
                 onClick={() => props.onChange(true)}
             >
-                <Edit />
+                <EditIcon />
             </IconButton>
         </Tooltip>
     );

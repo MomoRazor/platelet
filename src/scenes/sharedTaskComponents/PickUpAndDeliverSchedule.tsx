@@ -268,12 +268,10 @@ const PickUpAndDeliverSchedule: React.FC<PickUpAndDeliverScheduleProps> = ({
                             inputFormat={"dd/MM/yyyy"}
                             disablePast
                             value={state?.date}
-                            onChange={(date: any) =>
+                            onChange={(date) =>
                                 handleSetCustomDate(date ?? null)
                             }
-                            renderInput={(params: any) => (
-                                <TextField {...params} />
-                            )}
+                            renderInput={(params) => <TextField {...params} />}
                         />
                     )}
                     <TimeRelationPicker

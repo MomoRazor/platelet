@@ -3,13 +3,14 @@ import CommentsSection from "../../Comments/CommentsSection";
 import { PaddedPaper } from "../../../styles/common";
 import { useDispatch, useSelector } from "react-redux";
 import NotFound from "../../../ErrorComponents/NotFound";
-import { Skeleton, Divider, Stack } from "@mui/material";
+import Skeleton from "@mui/material/Skeleton";
 import { DataStore } from "aws-amplify";
 import * as models from "../../../models/index";
 import { dataStoreModelSyncedStatusSelector } from "../../../redux/Selectors";
 import { displayErrorNotification } from "../../../redux/notifications/NotificationsActions";
 import LocationProfile from "./LocationProfile";
 import { protectedFields } from "../../../apiConsts";
+import { Divider, Stack } from "@mui/material";
 import EnableDisableLocation from "./EnableDisableLocation";
 
 const initialLocationState = {
@@ -107,20 +108,20 @@ export default function LocationDetail({ locationId }) {
     if (isFetching) {
         return (
             <React.Fragment>
-                <PaddedPaper maxWidth="700px">
-                    <Stack direction="column" spacing={3}>
+                <PaddedPaper maxWidth={700}>
+                    <Stack direction={"column"} spacing={3}>
                         <Stack
-                            direction="row"
-                            justifyContent="space-between"
-                            alignItems="top"
+                            direction={"row"}
+                            justifyContent={"space-between"}
+                            alignItems={"top"}
                         >
                             <Skeleton variant="text" width={300} height={50} />
                         </Stack>
                         <Divider />
                         <Stack
-                            direction="column"
-                            justifyContent="space-between"
-                            alignItems="top"
+                            direction={"column"}
+                            justifyContent={"space-between"}
+                            alignItems={"top"}
                             maxWidth={700}
                         >
                             {Array(4)
@@ -135,9 +136,9 @@ export default function LocationDetail({ locationId }) {
                         </Stack>
                         <Divider />
                         <Stack
-                            direction="column"
-                            justifyContent="space-between"
-                            alignItems="top"
+                            direction={"column"}
+                            justifyContent={"space-between"}
+                            alignItems={"top"}
                         >
                             {Array(3)
                                 .fill(1)
@@ -152,12 +153,12 @@ export default function LocationDetail({ locationId }) {
                     </Stack>
                 </PaddedPaper>
                 <Stack height={10}></Stack>
-                <PaddedPaper maxWidth="850px">
-                    <Stack direction="row" spacing={3}>
+                <PaddedPaper maxWidth={850}>
+                    <Stack direction={"row"} spacing={3}>
                         <Skeleton variant="circular" width={40} height={40} />
                         <Skeleton variant="text" width={200} height={50} />
                     </Stack>
-                    <Stack direction="column" spacing={3}>
+                    <Stack direction={"column"} spacing={3}>
                         <Skeleton variant="text" MaxWidth={700} height={50} />
                     </Stack>
                 </PaddedPaper>
@@ -168,7 +169,7 @@ export default function LocationDetail({ locationId }) {
     } else {
         return (
             <React.Fragment>
-                <PaddedPaper maxWidth="700px">
+                <PaddedPaper maxWidth={700}>
                     <Stack direction="column" spacing={3}>
                         <LocationProfile
                             onUpdate={onUpdate}

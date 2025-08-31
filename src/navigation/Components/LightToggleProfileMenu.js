@@ -1,24 +1,20 @@
 import React from "react";
-import { RateReview, SignalWifiOff } from "@mui/icons-material";
-import {
-    IconButton,
-    Menu,
-    MenuItem,
-    Box,
-    Stack,
-    Tooltip,
-    useTheme,
-    useMediaQuery,
-} from "@mui/material";
+import RateReviewIcon from "@mui/icons-material/RateReview";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { encodeUUID } from "../../utilities";
+import { Box, Stack, Tooltip } from "@mui/material";
 import UserAvatar from "../../components/UserAvatar";
 import { useDispatch, useSelector } from "react-redux";
 import { getWhoami } from "../../redux/Selectors";
+import SignalWifiOff from "@mui/icons-material/SignalWifiOff";
 import { networkStatusSelector } from "../../redux/Selectors";
 import { logoutUser } from "../../redux/login/LoginActions";
 import SyncStatusCircleLoader from "./SyncStatusCircleLoader";
 import UserFeedbackDialog from "./UserFeedbackDialog";
+import { useTheme, useMediaQuery } from "@mui/material";
 import { DataStore } from "aws-amplify";
 
 function LightToggleProfileMenu() {
@@ -38,16 +34,16 @@ function LightToggleProfileMenu() {
 
     return (
         <Stack
-            direction="row"
-            justifyContent="flex-end"
-            alignItems="center"
+            direction={"row"}
+            justifyContent={"flex-end"}
+            alignItems={"center"}
             spacing={1}
         >
             <Box>
                 <SyncStatusCircleLoader />
                 {process.env.REACT_APP_DEMO_MODE !== "true" &&
                     !networkStatus && (
-                        <Tooltip title="You are working offline">
+                        <Tooltip title={"You are working offline"}>
                             <IconButton size="large">
                                 <SignalWifiOff />
                             </IconButton>
@@ -55,7 +51,7 @@ function LightToggleProfileMenu() {
                     )}
             </Box>
             {process.env.REACT_APP_DEMO_MODE !== "true" && !isSm && (
-                <Tooltip title="Send feedback">
+                <Tooltip title={"Send feedback"}>
                     <IconButton
                         onClick={() => {
                             setFeedbackOpen(true);
@@ -63,7 +59,7 @@ function LightToggleProfileMenu() {
                         aria-label="send feedback"
                         size="large"
                     >
-                        <RateReview />
+                        <RateReviewIcon />
                     </IconButton>
                 </Tooltip>
             )}

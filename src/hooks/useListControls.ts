@@ -54,7 +54,7 @@ const useListControls = <T extends PersistentModel>(
                 keys: searchKeys,
             })
         );
-    }, [searchInput, state, hideDisabled, searchKeysString]);
+    }, [searchInput, state, hideDisabled, searchKeysString, searchKeys]);
 
     return { state: filteredState };
 };

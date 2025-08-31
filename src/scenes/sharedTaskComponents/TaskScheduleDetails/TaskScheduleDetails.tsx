@@ -8,9 +8,8 @@ import {
     TextField,
     Typography,
 } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
+import { Edit, Clear } from "@mui/icons-material";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
-import ClearIcon from "@mui/icons-material/Clear";
 import TimeRelationPicker from "../TimeRelationPicker";
 import { DatePicker } from "@mui/lab";
 import TaskScheduleIconText from "../TaskScheduleIconText";
@@ -96,11 +95,11 @@ export const TaskScheduleDetails: React.FC<TaskScheduleDetailsProps> = ({
                         }}
                     >
                         <IconButton onClick={() => setConfirmClear(true)}>
-                            <ClearIcon />
+                            <Clear />
                         </IconButton>
                         {isPaid && (
                             <IconButton onClick={handleSetEditMode}>
-                                <EditIcon />
+                                <Edit />
                             </IconButton>
                         )}
                     </Box>
@@ -131,16 +130,18 @@ export const TaskScheduleDetails: React.FC<TaskScheduleDetailsProps> = ({
                 onConfirmation={handleSaveEdit}
                 open={editMode}
                 onCancel={() => setEditMode(false)}
-                dialogTitle={"Edit schedule"}
+                dialogTitle="Edit schedule"
             >
                 <Stack sx={{ minWidth: 500 }} spacing={2}>
                     {!hideDate && (
                         <DatePicker
-                            inputFormat={"dd/MM/yyyy"}
+                            inputFormat="dd/MM/yyyy"
                             disablePast
                             value={new Date(scheduleState?.date ?? "")}
                             onChange={handleChangeDate}
-                            renderInput={(params) => <TextField {...params} />}
+                            renderInput={(params: any) => (
+                                <TextField {...params} />
+                            )}
                         />
                     )}
                     {scheduleState?.date && (

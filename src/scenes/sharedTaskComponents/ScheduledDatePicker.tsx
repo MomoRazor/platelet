@@ -56,11 +56,11 @@ const ScheduledDatePicker: React.FC<ScheduledDatePickerProps> = ({
             </Box>
             {isCustom && (
                 <DatePicker
-                    inputFormat={"dd/MM/yyyy"}
+                    inputFormat="dd/MM/yyyy"
                     disablePast
                     value={customDate}
                     onChange={onSelectCustomDate}
-                    renderInput={(params) => <TextField {...params} />}
+                    renderInput={(params: any) => <TextField {...params} />}
                 />
             )}
         </Stack>

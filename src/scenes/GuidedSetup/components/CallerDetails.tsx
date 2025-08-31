@@ -90,9 +90,9 @@ export const CallerDetails: React.FC<CallerDetailType> = ({
             </Typography>
             <DateTimePicker
                 label="Time of call"
-                inputFormat={"dd/MM/yyyy HH:mm"}
+                inputFormat="dd/MM/yyyy HH:mm"
                 ampm={false}
-                renderInput={(params) => {
+                renderInput={(params: any) => {
                     const { inputProps } = params;
                     return (
                         <TextField
@@ -105,7 +105,7 @@ export const CallerDetails: React.FC<CallerDetailType> = ({
                     );
                 }}
                 value={timeOfCall}
-                onChange={(v) => {
+                onChange={(v: any) => {
                     if (v) onChangeTimeOfCall(v);
                 }}
                 onError={onInvalidTimeOfCall}

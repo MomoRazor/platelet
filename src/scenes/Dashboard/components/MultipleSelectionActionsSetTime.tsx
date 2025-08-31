@@ -10,28 +10,29 @@ type MultipleSelectionActionsSetTimeProps = {
     onChange?: (...args: any[]) => any;
 };
 
-const MultipleSelectionActionsSetTime: React.SFC<MultipleSelectionActionsSetTimeProps> =
-    ({ onChange = () => {} }) => {
-        const [time, setTime] = React.useState<Date | null>(new Date());
+const MultipleSelectionActionsSetTime: React.SFC<
+    MultipleSelectionActionsSetTimeProps
+> = ({ onChange = () => {} }) => {
+    const [time, setTime] = React.useState<Date | null>(new Date());
 
-        function handleTimeChange(value: Date | null) {
-            setTime(value);
-        }
+    function handleTimeChange(value: Date | null) {
+        setTime(value);
+    }
 
-        useEffect(() => {
-            if (!isValidDate(time)) onChange(null);
-            else onChange(time);
-        }, [onChange, time]);
+    useEffect(() => {
+        if (!isValidDate(time)) onChange(null);
+        else onChange(time);
+    }, [onChange, time]);
 
-        return (
-            <DateTimePicker
-                value={time}
-                inputFormat={"dd/MM/yyyy HH:mm"}
-                openTo="hours"
-                onChange={handleTimeChange}
-                renderInput={(params) => <TextField fullWidth {...params} />}
-            />
-        );
-    };
+    return (
+        <DateTimePicker
+            value={time}
+            inputFormat="dd/MM/yyyy HH:mm"
+            openTo="hours"
+            onChange={handleTimeChange}
+            renderInput={(params: any) => <TextField fullWidth {...params} />}
+        />
+    );
+};
 
 export default MultipleSelectionActionsSetTime;

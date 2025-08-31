@@ -10,7 +10,6 @@ import RiderPicker from "../../../components/RiderPicker";
 import * as models from "../../../models";
 import { useSelector } from "react-redux";
 import { getWhoami } from "../../../redux/Selectors";
-import { DateRangeValidationError } from "@mui/lab/internal/pickers/date-utils";
 
 type ReportsControlsProps = {
     adminSelectedUser: models.User | null;
@@ -36,8 +35,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
     const [customDaysRange, setCustomDaysRange] = React.useState<
         DateRange<Date>
     >([new Date(), new Date()]);
-    const [dateError, setDateError] =
-        React.useState<DateRangeValidationError | null>(null);
+    const [dateError, setDateError] = React.useState<any | null>(null);
     const whoami = useSelector(getWhoami);
     const isAdmin = whoami?.roles?.includes(models.Role.ADMIN);
 
@@ -90,7 +88,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
         }
     };
 
-    const handleCustomRangeError = (error: DateRangeValidationError) => {
+    const handleCustomRangeError = (error: any) => {
         if (error[0] || error[1]) {
             onErrorState(true);
             setDateError(error);
@@ -139,7 +137,7 @@ const ReportsControls: React.FC<ReportsControlsProps> = ({
                         endText="To"
                         value={customDaysRange}
                         onChange={handleDateChange}
-                        renderInput={(startProps, endProps) => (
+                        renderInput={(startProps: any, endProps: any) => (
                             <Stack spacing={1} direction="row">
                                 <TextField
                                     {...startProps}

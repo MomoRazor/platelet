@@ -1,6 +1,5 @@
 import * as React from "react";
-import ClearIcon from "@mui/icons-material/Clear";
-import EditIcon from "@mui/icons-material/Edit";
+import { Clear, Edit } from "@mui/icons-material";
 import {
     Button,
     IconButton,
@@ -9,9 +8,9 @@ import {
     Tooltip,
     Typography,
     useMediaQuery,
+    useTheme,
 } from "@mui/material";
 import TimeRelationPicker from "./TimeRelationPicker";
-import { useTheme } from "@mui/material/styles";
 import * as models from "../../models";
 import ConfirmationDialog from "../../components/ConfirmationDialog";
 import { calculateBetweenIsOneDay } from "../../utilities/calculateBetweenIsOneDay";
@@ -243,12 +242,12 @@ const PickUpAndDeliverSchedule: React.FC<PickUpAndDeliverScheduleProps> = ({
                         <Stack direction="row">
                             <Tooltip title={"Clear schedule"}>
                                 <IconButton onClick={handleClear}>
-                                    <ClearIcon />
+                                    <Clear />
                                 </IconButton>
                             </Tooltip>
                             <Tooltip title={"Edit schedule"}>
                                 <IconButton onClick={handleOpen}>
-                                    <EditIcon />
+                                    <Edit />
                                 </IconButton>
                             </Tooltip>
                         </Stack>
@@ -265,13 +264,15 @@ const PickUpAndDeliverSchedule: React.FC<PickUpAndDeliverScheduleProps> = ({
                 <Stack sx={{ minWidth: 500 }} spacing={2}>
                     {!hideDate && (
                         <DatePicker
-                            inputFormat={"dd/MM/yyyy"}
+                            inputFormat="dd/MM/yyyy"
                             disablePast
                             value={state?.date}
-                            onChange={(date) =>
+                            onChange={(date: any) =>
                                 handleSetCustomDate(date ?? null)
                             }
-                            renderInput={(params) => <TextField {...params} />}
+                            renderInput={(params: any) => (
+                                <TextField {...params} />
+                            )}
                         />
                     )}
                     <TimeRelationPicker

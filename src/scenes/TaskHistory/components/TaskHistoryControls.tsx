@@ -1,5 +1,4 @@
 import React from "react";
-import { useTheme } from "@mui/material/styles";
 import {
     IconButton,
     MenuItem,
@@ -9,13 +8,13 @@ import {
     TextField,
     Tooltip,
     useMediaQuery,
+    useTheme,
 } from "@mui/material";
 import { ModelSortDirection } from "../../../API";
-import RefreshIcon from "@mui/icons-material/Refresh";
+import { Refresh, ArrowBack } from "@mui/icons-material";
 import DaysSelection, { Days } from "../../../components/DaysSelection";
 import LoadingSpinner from "../../../components/LoadingSpinner";
 import { DateRangePicker, DateRange } from "@mui/lab";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 type TaskHistoryControlsProps = {
     sortDirection: ModelSortDirection;
@@ -79,7 +78,7 @@ const TaskHistoryControls: React.FC<TaskHistoryControlsProps> = ({
                 data-testid="refresh-task-history"
                 onClick={handleRefresh}
             >
-                <RefreshIcon
+                <Refresh
                     key={refreshKey}
                     sx={{
                         animation: "spin 1s linear reverse",
@@ -170,7 +169,7 @@ const TaskHistoryControls: React.FC<TaskHistoryControlsProps> = ({
                             endText="To"
                             value={customDaysRange}
                             onChange={handleDateChange}
-                            renderInput={(startProps, endProps) => (
+                            renderInput={(startProps: any, endProps: any) => (
                                 <Stack spacing={1} direction="row">
                                     <TextField
                                         {...startProps}
@@ -197,7 +196,7 @@ const TaskHistoryControls: React.FC<TaskHistoryControlsProps> = ({
                                 handleChangeDays(Days.CUSTOM);
                             }}
                         >
-                            <ArrowBackIcon />
+                            <ArrowBack />
                         </IconButton>
                     </Stack>
                 )}

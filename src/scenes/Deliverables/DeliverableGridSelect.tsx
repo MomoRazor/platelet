@@ -134,6 +134,7 @@ const DeliverableGridSelect: React.FC<DeliverableGridSelectProps> = ({
     const deliverablesJSON = JSON.stringify(deliverables);
     useEffect(convertExistingDeliverablesToState, [
         availableDeliverables,
+        deliverables,
         deliverablesJSON,
     ]);
 

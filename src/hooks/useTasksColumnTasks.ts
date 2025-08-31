@@ -51,7 +51,7 @@ const useTasksColumnTasks = (taskStatusKey: models.TaskStatus[]) => {
     const [isFetching, setIsFetching] = React.useState(true);
     const [error, setError] = React.useState(false);
     stateRef.current = state;
-    const tasksKeyJSON = JSON.stringify(taskStatusKey);
+    // const tasksKeyJSON = JSON.stringify(taskStatusKey);
 
     let myTaskAssigneeIds = taskAssignees.items
         .filter(
@@ -90,12 +90,12 @@ const useTasksColumnTasks = (taskStatusKey: models.TaskStatus[]) => {
         myTaskAssigneeIds = intersectingTasksIds;
     }
 
-    const sortedMyTaskAssigneeIds = myTaskAssigneeIds.sort(
-        (a: string, b: string) => {
-            return a.localeCompare(b);
-        }
-    );
-    const taskIdsJson = JSON.stringify(sortedMyTaskAssigneeIds);
+    // const sortedMyTaskAssigneeIds = myTaskAssigneeIds.sort(
+    //     (a: string, b: string) => {
+    //         return a.localeCompare(b);
+    //     }
+    // );
+    // const taskIdsJson = JSON.stringify(sortedMyTaskAssigneeIds);
 
     const getTasks = React.useCallback(async () => {
         if (
@@ -136,13 +136,13 @@ const useTasksColumnTasks = (taskStatusKey: models.TaskStatus[]) => {
             }
         }
     }, [
-        dashboardFilteredUser,
-        tasksKeyJSON,
         roleView,
-        selectionActionsPending,
-        taskIdsJson,
         taskAssigneesReady,
-        whoami.id,
+        selectionActionsPending,
+        taskStatusKey,
+        dashboardFilteredUser,
+        taskAssignees.items,
+        myTaskAssigneeIds,
     ]);
 
     React.useEffect(() => {
